@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="cabinet.obj">
+	<link name="_name">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="cabinet.obj" scale="0.001 0.001 0.001" />
+			</geometry>
+			<material name="texture">
+				<color rgba="0.7 0.65 0.73 1.0" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="cabinet_vhacd.obj" scale="0.001 0.001 0.001" />
+			</geometry>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 0" /></collision>
+		<inertial>
+			<mass value="0.3" />
+			<inertia ixx="0.6" ixy="0.0" ixz="0.0" iyy="0.5" iyz="-0.0" izz="0.08" />
+		</inertial>
+	</link>
+</robot>

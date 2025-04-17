@@ -1,0 +1,71 @@
+defaults:
+  - Domain
+  - _self_
+
+name: Bump
+
+env:
+  geometry:
+    xmin: 0.1
+    xmax: 0.5
+    ymin: -0.25
+    ymax: -0.05
+    table:
+      x: 0.3
+      y: 0.0
+      z: 0.2065 # total height is 0.5065 = 0.2065 + height/2
+      width: 0.4 # 1.0 #0.4
+      length: 0.84 #1.0 #0.5
+      height: 0.6 #0.6 #0.4
+    object:
+      width: 0.09
+      length: 0.09
+      height: 0.09
+      density: 193
+    obstacle:
+      x: 0.3
+      y: 0.15
+      z: 0.515 # No Bump 0.45  # Original Bump 0.515
+      width: 0.4
+      length: 0.1 #0.1
+      height: 0.03
+    both_side: True
+    bolt: False
+    init_goal:
+      # T_G: [0.34, 0.0, 0.5515, 0, 0, 0, 1]
+      # T_O: [0.3, 0.294, 0.5515, 0, 0, 0, 1]
+      T_O:
+      T_G:
+  properties:
+    table:
+      friction: 0.25
+      restitution: 0.1
+    bump:
+      friction: 0.25
+      restitution: 0.1
+    bolt:
+      friction: 0.2
+      restitution: 0.1
+    object:
+      friction: 0.25
+      restitution: 0.1
+    
+    
+
+task:
+  randomization_params:
+    actor_params:
+      table:
+        rigid_shape_properties: 
+          friction: 
+            range: [0.5, 1.5]
+            operation: "scaling"
+            distribution: "uniform"
+            num_buckets: 40
+      bump:
+        rigid_shape_properties: 
+          friction: 
+            range: [0.5, 1.5]
+            operation: "scaling"
+            distribution: "uniform"
+            num_buckets: 40

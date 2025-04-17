@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="RobotBimanualV5">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0050738 0.00034448 0.49302"
+        rpy="0 0 0" />
+      <mass
+        value="6.4854" />
+      <inertia
+        ixx="0.33731"
+        ixy="-7.7946E-06"
+        ixz="-0.0034134"
+        iyy="0.33618"
+        iyz="2.3553E-05"
+        izz="0.0076942" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/base_link.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/base_link.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.00277367 6.161E-05 0.05165334"
+        rpy="0 0 0" />
+      <mass
+        value="0.706" />
+      <inertia
+        ixx="0.00074611"
+        ixy="5.4E-07"
+        ixz="5.3E-07"
+        iyy="0.00054009"
+        iyz="3.26E-06"
+        izz="0.00050643" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link1.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link1.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.02 0.1036 0.8358"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57079633"
+      upper="0.87266463"
+      effort="4"
+      velocity="10.0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-0.00124394 -5.732E-05 0.0545228"
+        rpy="0 0 0" />
+      <mass
+        value="0.659" />
+      <inertia
+        ixx="0.00064807"
+        ixy="8.3E-07"
+        ixz="-4.6E-07"
+        iyy="0.00045162"
+        iyz="-1.01E-06"
+        izz="0.00043422" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link2.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link2.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="-0.02205 0 0.0528"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57079633"
+      upper="1.3962634"
+      effort="4"
+      velocity="10.0" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="-0.03505493 -0.006151 0.05438578"
+        rpy="0 0 0" />
+      <mass
+        value="1.095" />
+      <inertia
+        ixx="0.00161847"
+        ixy="0.00042205"
+        ixz="-0.00104433"
+        iyy="0.0066165"
+        iyz="-0.0001917"
+        izz="0.00653551" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link3.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link3.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.023 0 0.0565"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14159265"
+      upper="1.3962634"
+      effort="4"
+      velocity="10.0" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-0.00914828 -0.00042727 -7.12E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.268" />
+      <inertia
+        ixx="9.136E-05"
+        ixy="7E-08"
+        ixz="-2E-08"
+        iyy="0.00013894"
+        iyz="0"
+        izz="0.00013031" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link4.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link4.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="-0.25 0 0.08318"
+      rpy="0 0 1.5708" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.78539816"
+      upper="1.30899694"
+      effort="4"
+      velocity="10.0" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.00143459 -5.019E-05 0.22261684"
+        rpy="0 0 0" />
+      <mass
+        value="0.285" />
+      <inertia
+        ixx="0.00170458"
+        ixy="1.5E-07"
+        ixz="-2.111E-05"
+        iyy="0.00168732"
+        iyz="-5.6E-07"
+        izz="7.029E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link5.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link5.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.014 0.00010349 0"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.66519143"
+      upper="3.66519143"
+      effort="1"
+      velocity="15.0" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="0.01350782 0.04995762 -0.01596135"
+        rpy="0 0 0" />
+      <mass
+        value="0.1001" />
+      <inertia
+        ixx="0.00020769"
+        ixy="2.946E-05"
+        ixz="-5.9E-07"
+        iyy="4.115E-05"
+        iyz="-2.19E-06"
+        izz="0.000191" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link6.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link6.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0.012203 0 0.2634"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.18166156"
+      upper="2.18166156"
+      effort="1"
+      velocity="15.0" />  
+  </joint>
+  <link name="tool1">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+  </link>
+  <joint name="tool1_frame" type="fixed">
+    <origin xyz="0.021 0.07 -0.0165" rpy="0 0 0" /> 
+    <parent link="link6" />
+    <child link="tool1" />
+  </joint>
+
+  <link
+    name="link7">
+    <inertial>
+      <origin
+        xyz="0.00239406 -0.00016204 0.05155291"
+        rpy="0 0 0" />
+      <mass
+        value="0.706" />
+      <inertia
+        ixx="0.00074592"
+        ixy="-2.03E-06"
+        ixz="-1.52E-06"
+        iyy="0.00053798"
+        iyz="-3.35E-06"
+        izz="0.00050821" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link7.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link7.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="revolute">
+    <origin
+      xyz="0.02 -0.1036 0.8358"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.87266463"
+      upper="1.57079633"
+      effort="4"
+      velocity="10.00" />  
+  </joint>
+  <link
+    name="link8">
+    <inertial>
+      <origin
+        xyz="-0.00124394 7.606E-05 0.05454155"
+        rpy="0 0 0" />
+      <mass
+        value="0.659" />
+      <inertia
+        ixx="0.00064811"
+        ixy="-1.1E-06"
+        ixz="-7.3E-07"
+        iyy="0.0004522"
+        iyz="1.03E-06"
+        izz="0.00043369" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link8.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link8.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint8"
+    type="revolute">
+    <origin
+      xyz="-0.02205 0 0.0528"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="link7" />
+    <child
+      link="link8" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.3962634"
+      upper="1.57079633"
+      effort="4"
+      velocity="10.00" />
+  </joint>
+  <link
+    name="link9">
+    <inertial>
+      <origin
+        xyz="-0.03505563 0.00468094 0.05453087"
+        rpy="0 0 0" />
+      <mass
+        value="1.095" />
+      <inertia
+        ixx="0.00161845"
+        ixy="-0.00039365"
+        ixz="-0.00105521"
+        iyy="0.00662637"
+        iyz="0.00018923"
+        izz="0.00652496" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link9.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link9.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint9"
+    type="revolute">
+    <origin
+      xyz="0.023 0 0.0565"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="link8" />
+    <child
+      link="link9" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.3962634"
+      upper="3.14159265"
+      effort="4"
+      velocity="10.00" />
+  </joint>
+  <link
+    name="link10">
+    <inertial>
+      <origin
+        xyz="-0.00914828 -0.00042727 7.13E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.268" />
+      <inertia
+        ixx="9.136E-05"
+        ixy="7E-08"
+        ixz="2E-08"
+        iyy="0.00013894"
+        iyz="0"
+        izz="0.00013031" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link10.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link10.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint10"
+    type="revolute">
+    <origin
+      xyz="-0.25 0 0.08318"
+      rpy="-3.1416 0 -1.5708" />
+    <parent
+      link="link9" />
+    <child
+      link="link10" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.30899694"
+      upper="0.78539816"
+      effort="4"
+      velocity="10.00" />
+  </joint>
+  <link
+    name="link11">
+    <inertial>
+      <origin
+        xyz="-0.00143459 -5.019E-05 0.22261684"
+        rpy="0 0 0" />
+      <mass
+        value="0.285" />
+      <inertia
+        ixx="0.00170458"
+        ixy="1.5E-07"
+        ixz="-0.0002111"
+        iyy="0.00168732"
+        iyz="-5.6E-07"
+        izz="7.029E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link11.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link11.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint11"
+    type="revolute">
+    <origin
+      xyz="0.014 0.00010349 0"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="link10" />
+    <child
+      link="link11" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.66519143"
+      upper="3.66519143"
+      effort="1"
+      velocity="15.00" />
+  </joint>
+  <link
+    name="link12">
+    <inertial>
+      <origin
+        xyz="-0.01350782 0.04995761 -0.01596135"
+        rpy="0 0 0" />
+      <mass
+        value="0.1001" />
+      <inertia
+        ixx="0.00020769"
+        ixy="-2.946E-05"
+        ixz="5.9E-07"
+        iyy="4.115E-05"
+        iyz="-2.19E-06"
+        izz="0.000191" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/visual/link12.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RobotBimanualV5/collision/link12.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint12"
+    type="revolute">
+    <origin
+      xyz="0.012203 0 0.2634"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="link11" />
+    <child
+      link="link12" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.18166156"
+      upper="2.18166156"
+      effort="1"
+      velocity="15.00" />
+  </joint>
+  <link name="tool2">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+  </link>
+  <joint name="tool2_frame" type="fixed">
+    <origin xyz="-0.021 0.07 -0.0165" rpy="0 0 0" /> 
+    <parent link="link12" />
+    <child link="tool2" />
+  </joint>
+</robot>

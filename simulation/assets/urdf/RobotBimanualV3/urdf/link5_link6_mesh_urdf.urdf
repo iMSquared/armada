@@ -1,0 +1,118 @@
+
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.00143459 -5.019E-05 0.22261684"
+        rpy="0 0 0" />
+      <mass
+        value="0.285" />
+      <inertia
+        ixx="0.00170458"
+        ixy="1.5E-07"
+        ixz="-2.111E-05"
+        iyy="0.00168732"
+        iyz="-5.6E-07"
+        izz="7.029E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.014 0 0"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="0 0.05222536 -0.0188198"
+        rpy="0 0 0" />
+      <mass
+        value="0.201" />
+      <inertia
+        ixx="0.00024939"
+        ixy="0"
+        ixz="0"
+        iyy="0.0002157"
+        iyz="-6.26E-06"
+        izz="0.00036328" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0.01415 0 0.2633"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  

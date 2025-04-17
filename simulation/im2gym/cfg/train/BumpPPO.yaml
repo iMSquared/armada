@@ -1,0 +1,10 @@
+defaults:
+  - DomainPPO
+  - _self_
+
+params:
+  network:
+    mlp:
+      object_points: 96
+  config:
+    name: ${resolve_default:Bump,${....experiment}}

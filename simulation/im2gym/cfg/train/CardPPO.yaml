@@ -1,0 +1,7 @@
+defaults:
+  - DomainPPO
+  - _self_
+
+params:
+  config:
+    name: ${resolve_default:Card,${....experiment}}

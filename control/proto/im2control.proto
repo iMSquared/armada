@@ -1,0 +1,109 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "control.im2control";
+option java_outer_classname = "IM2ControlProto";
+option objc_class_prefix = "IM2";
+
+package im2control;
+
+// Interface exported by the server.
+service IM2Control {
+    // A RPC to control IM2 humanoid.
+    //
+    // Torque control the arm
+    rpc TorqueControl(TorqueControlIn) returns (Empty) {}
+
+    // Position control the arm
+    rpc PositionControl(PositionControlIn) returns (Empty) {}
+
+    // Joint PD control the arm
+    rpc JointPDControl(JointPDControlIn) returns (Empty) {}
+
+    // Returns max torques for each joint
+    rpc GetMaxTorques(Empty) returns (NDArray) {}
+
+    // Returns joint offset to match the motor-encoder readings to URDF convention
+    rpc GetJointInitOffset(Empty) returns (NDArray) {}
+
+    // Returns current position, velocity, and torque of joints
+    rpc GetJointState(String) returns (JointState) {}
+
+    // Returns position and orientation(quaternion) of End Effector in Robot frame
+    rpc GetEEPose(String) returns (Pose) {}
+
+    // Returns linear and angular jacobians
+    rpc GetJacobian(String) returns (Jacobian) {}
+
+    // Safely shutdowns the motors
+    rpc Shutdown (Empty) returns (Boolean) {}
+
+    // Gripper control
+    rpc SetGripperState(GripperControlIn) returns (Empty) {}
+
+    // Gripper state
+    rpc GetGripperState(String) returns (Float) {}
+}
+
+// Message data format
+message TorqueControlIn {
+    string arm = 1;
+    repeated float desired_torques = 2 [packed = true];
+}
+
+message PositionControlIn {
+    string arm = 1;
+    repeated float desired_position = 2 [packed = true];
+    repeated float desired_velocity = 3 [packed = true];
+    repeated float desired_p_gains = 4 [packed = true];
+    repeated float desired_d_gains = 5 [packed = true];
+}
+
+message JointPDControlIn {
+    string arm = 1;
+    repeated float target_joint_position = 2 [packed = true];
+    repeated float p_gains = 3 [packed = true];
+    repeated float d_gains = 4 [packed = true];
+
+}
+
+message GripperControlIn {
+    string arm = 1;
+    float value = 2;
+}
+
+message JointState {
+    repeated float current_position = 1 [packed = true];
+    repeated float current_velocity = 2 [packed = true];
+    repeated float current_torque = 3 [packed = true];
+    repeated float current_gravity = 4 [packed = true];
+}
+
+message Pose {
+    repeated float position = 1 [packed = true];
+    repeated float orientation = 2 [packed = true];
+}
+
+message Jacobian {
+    repeated float linear_jacobian = 1 [packed = true];
+    repeated float angular_jacobian = 2 [packed = true];
+}
+
+message NDArray {
+    repeated float array = 1 [packed = true];
+}
+
+message Empty {}
+
+message Boolean {
+    bool value = 1;
+}
+
+message String {
+    string value = 1;
+}
+
+message Float {
+    float value = 1;
+}
